@@ -307,7 +307,7 @@ h1.tw .tw-caret{display:inline-block;width:.055em;height:.78em;background:curren
 ========================================= */
 section{padding:96px 0;position:relative}
 section.container{padding-left:24px;padding-right:24px;padding-top:96px;padding-bottom:96px}
-#clients{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:120px;padding-bottom:120px;background:#08CB00;color:#EEEEEE;clip-path:inset(0 -100vmax);box-shadow:0 0 0 100vmax #08CB00}
+#clients{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:120px;padding-bottom:120px;background:#000;color:#EEEEEE;clip-path:inset(0 -100vmax);box-shadow:0 0 0 100vmax #000}
 #clients .section-title,#clients .section-title .highlight{color:#EEEEEE}
 #achievements{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:120px;padding-bottom:120px;background:#000;clip-path:inset(0 -100vmax);box-shadow:0 0 0 100vmax #000}
 .track-row{display:flex;align-items:center;gap:48px}
@@ -396,12 +396,12 @@ input:checked + .slider:before { transform: translateX(26px); }
 @keyframes logo-marquee { to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .logo-track { animation: none; } }
 .trust-badges{display:flex;align-items:center;justify-content:center;gap:56px;margin-top:56px;flex-wrap:wrap}
-.trust-badges img{height:120px;width:auto}
+.trust-badges img{height:120px;width:auto;filter:brightness(0) invert(1) brightness(.933)}
 .trust-badges img.sm{height:70px}
 @media (max-width:600px){.trust-badges{gap:28px}.trust-badges img{height:84px}.trust-badges img.sm{height:52px}}
 .trusted-badge{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:56px;font-family:'Oswald','Inter',sans-serif;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:#EEEEEE;font-size:20px}
 .client-logos{margin-top:64px}
-.trusted-badge img{height:42px;width:auto}
+.trusted-badge img{height:42px;width:auto;filter:brightness(0) invert(1) brightness(.933)}
 .client-logos img:hover { transform: scale(1.15); }
 
 .service-card {text-align: center; padding: 32px 24px; cursor: pointer;}
@@ -1067,9 +1067,9 @@ footer{background:#150d09;color:#fff;border-top:1px solid var(--border);padding:
            </div>
         </div>
         <div class="trust-badges">
-            <img src="google-trusted-photographer.webp" alt="Google Street View Trusted Photographer" width="1024" height="866" loading="lazy">
             <img class="sm" src="google-ads-partner.webp" alt="Google Ads Certified Partner" width="535" height="160" loading="lazy">
             <img class="sm" src="google-trusted-verifier.webp" alt="Google Trusted Verifier" width="1491" height="667" loading="lazy">
+            <img class="sm" src="google-street-view-trusted.webp" alt="Google Street View Trusted Photographer" width="877" height="424" loading="lazy">
         </div>
         <div class="trusted-badge">
             <img src="google-trust.webp" alt="Google Trusted Store" width="1247" height="344">
