@@ -1223,9 +1223,9 @@ footer{background:#150d09;color:#fff;border-top:1px solid var(--border);padding:
           <div class="price-card-body">
             <div class="price">&#8377;25,000<span>&nbsp;onwards</span></div>
             <ul class="features-list">
-              <li><i class="ph-fill ph-check-circle"></i>Android App Development &mdash; &#8377;25,000</li>
-              <li><i class="ph-fill ph-check-circle"></i>iOS App Development &mdash; &#8377;35,000</li>
-              <li><i class="ph-fill ph-check-circle"></i>Maintenance &amp; Updates &mdash; &#8377;5,000/month</li>
+              <li class="plan"><i class="ph-fill ph-check-circle"></i>Android App Development &mdash; &#8377;25,000</li>
+              <li class="plan"><i class="ph-fill ph-check-circle"></i>iOS App Development &mdash; &#8377;35,000</li>
+              <li class="plan"><i class="ph-fill ph-check-circle"></i>Maintenance &amp; Updates &mdash; &#8377;5,000/month</li>
               <li><i class="ph-fill ph-check-circle"></i>Business, e-commerce, education, healthcare, food &amp; real-estate apps</li>
               <li><i class="ph-fill ph-check-circle"></i>Play Store &amp; App Store deployment</li>
               <li><i class="ph-fill ph-check-circle"></i>User-friendly UI/UX, secure, scalable &amp; tech support</li>
@@ -2580,7 +2580,7 @@ if (canvas && hero && !window.matchMedia('(prefers-reduced-motion: reduce)').mat
   const positions = [];
   for (let i = 0; i < COUNT; i++) {
     positions.push(new THREE.Vector3((Math.random() - 0.5) * 100, (Math.random() - 0.5) * 100, (Math.random() - 0.5) * 100));
-    instancedMesh.setColorAt(i, color.setHex(0x00ff88));
+    instancedMesh.setColorAt(i, color.setHex(0x999999));
   }
 
   // Camera orbits on its own — no OrbitControls, so the canvas never eats pointer events.
@@ -2629,9 +2629,9 @@ if (canvas && hero && !window.matchMedia('(prefers-reduced-motion: reduce)').mat
         z + Math.cos(x * 0.06 + z * 0.08 + time) * 3.0
       );
 
-      const hue = (0.55 + u * 0.32 + fold * 0.035 + time * 0.025) % 1.0;
-      const light = 0.42 + 0.18 * Math.abs(Math.sin(theta * 2.0 + time));
-      color.setHSL(hue, 0.9, light);
+      // greyscale: saturation 0, fold folded into lightness so it keeps its depth
+      const light = 0.40 + 0.22 * Math.abs(Math.sin(theta * 2.0 + time)) + fold * 0.06;
+      color.setHSL(0, 0, light < 0 ? 0 : light > 1 ? 1 : light);
 
       positions[i].lerp(target, 0.1);
       dummy.position.copy(positions[i]);
